@@ -4,6 +4,7 @@ import 'package:platzi_trip_app/description_place.dart';
 import 'package:platzi_trip_app/gradient_back.dart';
 import 'package:platzi_trip_app/header_appbar.dart';
 import 'package:platzi_trip_app/platzi_trips.dart';
+import 'package:platzi_trip_app/platzi_trips_cupertino.dart';
 import 'package:platzi_trip_app/review_list.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PlatziTrips()
+      home: PlatziTripsCupertino()
     );
   }
 }
