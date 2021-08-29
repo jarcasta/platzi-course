@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trip_app/button_purple.dart';
 import 'package:platzi_trip_app/shared/stars.dart';
-import 'package:platzi_trip_app/review_list.dart';
 
 class DescriptionPlace extends StatelessWidget{
 
@@ -17,7 +16,7 @@ class DescriptionPlace extends StatelessWidget{
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 320.0,
+            top: 380.0,
             left: 20.0,
             right: 20.0
           ),
@@ -31,7 +30,7 @@ class DescriptionPlace extends StatelessWidget{
             textAlign: TextAlign.left,
           ),
         ),
-        Stars(322.0,  30.0)
+        Stars(382.0,  30.0)
       ],
     );
 
