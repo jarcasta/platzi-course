@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trip_app/profilePage/icon_profile_button.dart';
+import 'package:platzi_trip_app/User/ui/widgets/icon_profile_button.dart';
 
 class ProfileIconsBar extends StatelessWidget{
   @override

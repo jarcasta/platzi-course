@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trip_app/shared/stars.dart';
+import 'package:platzi_trip_app/Shared/ui/widgets/stars.dart';
 
 class Review extends StatelessWidget{
 

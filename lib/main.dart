@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:platzi_trip_app/description_place.dart';
-import 'package:platzi_trip_app/gradient_back.dart';
-import 'package:platzi_trip_app/header_appbar.dart';
+import 'package:platzi_trip_app/Place/ui/screens/description_place.dart';
+import 'package:platzi_trip_app/Place/ui/widgets/gradient_back.dart';
+import 'package:platzi_trip_app/Place/ui/screens/header_appbar.dart';
 import 'package:platzi_trip_app/platzi_trips.dart';
 import 'package:platzi_trip_app/platzi_trips_cupertino.dart';
-import 'package:platzi_trip_app/review_list.dart';
+import 'package:platzi_trip_app/Place/ui/widgets/review_list.dart';
 
 void main() {
   runApp(MyApp());

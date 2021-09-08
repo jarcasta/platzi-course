@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trip_app/profilePage/header_profile.dart';
+import 'package:platzi_trip_app/User/ui/screens/header_profile.dart';
 
 class DescriptionProfile extends StatelessWidget{
   @override

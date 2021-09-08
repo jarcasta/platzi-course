@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trip_app/profilePage/image_profile_card.dart';
+import 'package:platzi_trip_app/User/ui/widgets/image_profile_card.dart';
 
 class ImageShowProfile extends StatelessWidget{
   @override
