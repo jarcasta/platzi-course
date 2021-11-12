@@ -28,7 +28,8 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen>{
           buttonPressed ? Icons.favorite : Icons.favorite_border ,
           color: Colors.white,
         ),
-        onPressed: onPressedFav
+        onPressed: onPressedFav,
+      heroTag: null ,
     );
   }
   

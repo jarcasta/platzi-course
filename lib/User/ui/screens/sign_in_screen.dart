@@ -40,6 +40,8 @@ class _SignInScreen extends State<SignInScreen>{
   }
 
   Widget signInGoogleUI(){
+    double screenWidth =  MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.center ,
@@ -48,14 +50,20 @@ class _SignInScreen extends State<SignInScreen>{
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Welcome \nThis is your travel app',
-                style: TextStyle(
-                  fontSize: 37,
-                  fontFamily: 'ComicNeue',
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
-                ),
+              Flexible(
+                  child: Container(
+                    margin: EdgeInsets.only(left: 40.0),
+                    width: screenWidth,
+                    child: Text(
+                      'Welcome \nThis is your travel app',
+                      style: TextStyle(
+                          fontSize: 37,
+                          fontFamily: 'ComicNeue',
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
               ),
               ButtonGreen(
                   text: 'Login with Gmail',
