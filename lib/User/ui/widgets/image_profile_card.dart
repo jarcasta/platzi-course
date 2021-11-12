@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trip_app/Place/model/place.dart';
 import 'package:platzi_trip_app/Shared/ui/widgets/floating_action_button_green.dart';
 
 class ImageProfileCard extends StatelessWidget{
-  String pathImage = 'assets/img/viewImg/beach.jpeg';
+  Place place;
 
-  ImageProfileCard(this.pathImage);
+  ImageProfileCard(this.place);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ImageProfileCard extends StatelessWidget{
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                pathImage,
+                place.urlImage,
               )
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -64,7 +65,7 @@ class ImageProfileCard extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Lorem ipsum',
+                  place.name,
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w700,
@@ -74,7 +75,7 @@ class ImageProfileCard extends StatelessWidget{
                 ),
                 Container(margin: EdgeInsets.only(top: 5.0),),
                 Text(
-                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                  place.description,
                   style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
@@ -83,7 +84,7 @@ class ImageProfileCard extends StatelessWidget{
                 ),
                 Container(margin: EdgeInsets.only(top: 5.0),),
                 Text(
-                  'Lorem ipsum 29/08/2021',
+                  'Likes: ${place.likes}',
                   style: TextStyle(
                       color: Colors.amber,
                       fontWeight: FontWeight.w600,

@@ -5,6 +5,7 @@ import 'package:platzi_trip_app/User/bloc/bloc_user.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:platzi_trip_app/User/model/user.dart';
+import 'package:platzi_trip_app/User/ui/widgets/gradient_profile.dart';
 import 'package:platzi_trip_app/platzi_trips_cupertino.dart';
 
 class SignInScreen extends StatefulWidget{
@@ -41,9 +42,9 @@ class _SignInScreen extends State<SignInScreen>{
   Widget signInGoogleUI(){
     return Scaffold(
       body: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.center ,
         children: [
-          GradientBack('', null),
+          GradientBack(height: null),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
