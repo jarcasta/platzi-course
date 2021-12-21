@@ -96,7 +96,7 @@ class ImageProfileCard extends StatelessWidget{
             ),
           )
         ),
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(icon: Icons.favorite_border,)
       ],
     );
 

@@ -4,7 +4,7 @@ class FloatingActionButtonGreen extends StatefulWidget{
   final IconData icon;
   final VoidCallback onPressed;
 
-  FloatingActionButtonGreen({
+   FloatingActionButtonGreen({
     Key key,
     @required this.icon,
     @required this.onPressed
