@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
 class FloatingActionButtonGreen extends StatefulWidget{
+  final IconData icon;
+  final VoidCallback onPressed;
+
+  FloatingActionButtonGreen({
+    Key key,
+    @required this.icon,
+    @required this.onPressed
+  });
+
   @override
   State<StatefulWidget> createState() {
     return _FloatingActionButtonGreen();
@@ -12,12 +21,6 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen>{
 
   bool buttonPressed = false;
 
-  void onPressedFav(){
-    setState(() {
-      buttonPressed = !buttonPressed;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -25,10 +28,10 @@ class _FloatingActionButtonGreen extends State<FloatingActionButtonGreen>{
         mini: true,
         tooltip: 'Fav',
         child: Icon(
-          buttonPressed ? Icons.favorite : Icons.favorite_border ,
+          widget.icon ,
           color: Colors.white,
         ),
-        onPressed: onPressedFav,
+        onPressed: widget.onPressed,
       heroTag: null ,
     );
   }
