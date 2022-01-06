@@ -32,7 +32,14 @@ class CloudFirestoreAPI {
         'name': place.name,
         'description': place.description,
         'likes': place.likes,
-        'userOwner': '${USERS}/${user.uid}'
+        'userOwner': _db.document('${USERS}/${user.uid}')
+      }).then((DocumentReference dr) {
+        dr.get().then((DocumentSnapshot snapshot) {
+          DocumentReference refUsers = _db.collection(USERS).document(user.uid);
+          refUsers.updateData({
+            'myPlaces': FieldValue.arrayUnion([_db.document('${PLACES}/${snapshot.documentID}')])
+          });
+        });
       });
     });
   }

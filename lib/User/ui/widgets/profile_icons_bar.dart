@@ -21,13 +21,14 @@ class ProfileIconsBar extends StatelessWidget {
         children: [
           IconProfileButton(Icons.vpn_key, false, 60.0, () => {}),
           IconProfileButton(Icons.add, true, 60.0, () {
-            ImagePicker.pickImage(source: ImageSource.camera)
+            ImagePicker.pickImage(source: ImageSource.gallery)
                 .then((File image) {
               Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (BuildContext) => AddPlaceScreen(image: image)));
             }).catchError((onError) {
+              print('Error:');
               print(onError);
             });
           }),
