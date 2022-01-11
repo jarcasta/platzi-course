@@ -21,7 +21,7 @@ class ProfileIconsBar extends StatelessWidget {
         children: [
           IconProfileButton(Icons.vpn_key, false, 60.0, () => {}),
           IconProfileButton(Icons.add, true, 60.0, () {
-            ImagePicker.pickImage(source: ImageSource.gallery)
+            ImagePicker.pickImage(source: ImageSource.camera)
                 .then((File image) {
               Navigator.push(
                   context,

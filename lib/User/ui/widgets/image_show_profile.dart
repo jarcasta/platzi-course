@@ -23,26 +23,20 @@ class ImageShowProfile extends StatelessWidget{
             case ConnectionState.done:
               return ListView(
                 scrollDirection: Axis.vertical,
-                children: <Widget>[
-                  ImageProfileCard(place1),
-                  ImageProfileCard(place2),
-                  ImageProfileCard(place3),
-                ],
+                children: userBloc.buildPlaces(snapshot.data.documents)
               );
             case ConnectionState.active:
               return ListView(
-                scrollDirection: Axis.vertical,
-                children: <Widget>[
-                  ImageProfileCard(place1),
-                  ImageProfileCard(place2),
-                  ImageProfileCard(place3),
-                ],
+                  scrollDirection: Axis.vertical,
+                  children: userBloc.buildPlaces(snapshot.data.documents)
               );
             case ConnectionState.none:
-              return null;
+              return CircularProgressIndicator();
             default:
-              return null;
-          }
+              return ListView(
+                  scrollDirection: Axis.vertical,
+                  children: userBloc.buildPlaces(snapshot.data.documents)
+              );          }
         },
       ),
     );

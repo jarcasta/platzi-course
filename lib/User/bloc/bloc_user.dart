@@ -9,6 +9,7 @@ import 'package:platzi_trip_app/User/model/user.dart';
 import 'package:platzi_trip_app/User/repository/auth_repository.dart';
 import 'package:platzi_trip_app/User/repository/cloud_firestore_api.dart';
 import 'package:platzi_trip_app/User/repository/cloud_firestore_repository.dart';
+import 'package:platzi_trip_app/User/ui/widgets/image_profile_card.dart';
 
 class UserBloc implements Bloc {
   final _auth_repository = AuthRepository();
@@ -22,15 +23,11 @@ class UserBloc implements Bloc {
 
   Future<FirebaseUser> signIn() => _auth_repository.signInFirebase();
   final _cloudFirestoreRepository = CloudFirestoreRepository();
-
-  void updateUserData(User user) =>
-      _cloudFirestoreRepository.updateUserDataFirestore(user);
-
-  Future<void> updatePlaceData(Place place) =>
-      _cloudFirestoreRepository.updatePlaceData(place);
-
+  void updateUserData(User user) => _cloudFirestoreRepository.updateUserDataFirestore(user);
+  Future<void> updatePlaceData(Place place) => _cloudFirestoreRepository.updatePlaceData(place);
   Stream<QuerySnapshot> placesListString = Firestore.instance.collection(CloudFirestoreAPI().PLACES).snapshots();
   Stream<QuerySnapshot> get placesStream => placesListString;
+  List<ImageProfileCard> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
 
   final _firebaseStorageRepository = FirebaseStorageRepository();
