@@ -46,7 +46,7 @@ class CloudFirestoreAPI {
     });
   }
 
-  List<ImageProfileCard> buildPlaces(List<DocumentSnapshot> placesListSnapshot){
+  List<ImageProfileCard> buildMyPlaces(List<DocumentSnapshot> placesListSnapshot){
     List<ImageProfileCard> profilePlaces = List<ImageProfileCard>();
     if(placesListSnapshot.isNotEmpty){
       placesListSnapshot.forEach((p) {

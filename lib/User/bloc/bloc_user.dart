@@ -23,12 +23,27 @@ class UserBloc implements Bloc {
 
   Future<FirebaseUser> signIn() => _auth_repository.signInFirebase();
   final _cloudFirestoreRepository = CloudFirestoreRepository();
-  void updateUserData(User user) => _cloudFirestoreRepository.updateUserDataFirestore(user);
-  Future<void> updatePlaceData(Place place) => _cloudFirestoreRepository.updatePlaceData(place);
-  Stream<QuerySnapshot> placesListString = Firestore.instance.collection(CloudFirestoreAPI().PLACES).snapshots();
-  Stream<QuerySnapshot> get placesStream => placesListString;
-  List<ImageProfileCard> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => _cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
+  void updateUserData(User user) =>
+      _cloudFirestoreRepository.updateUserDataFirestore(user);
+
+  Future<void> updatePlaceData(Place place) =>
+      _cloudFirestoreRepository.updatePlaceData(place);
+  Stream<QuerySnapshot> placesListString =
+      Firestore.instance.collection(CloudFirestoreAPI().PLACES).snapshots();
+
+  Stream<QuerySnapshot> get placesStream => placesListString;
+
+  List<ImageProfileCard> buildMyPlaces(
+          List<DocumentSnapshot> placesListSnapshot) =>
+      _cloudFirestoreRepository.buildMyPlaces(placesListSnapshot);
+
+  Stream<QuerySnapshot> myPlacesListStream(String uid) => Firestore.instance
+      .collection(CloudFirestoreAPI().PLACES)
+      .where(
+        'userOwner',
+        isEqualTo: Firestore.instance.document("${CloudFirestoreAPI().USERS}/${uid}"))
+      .snapshots();
 
   final _firebaseStorageRepository = FirebaseStorageRepository();
 
